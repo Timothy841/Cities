@@ -1,4 +1,4 @@
-// Courteous of Phillip Paul Fuchs: https://www.quickperm.org/ Quick Perm (Countdown)
+// Courtesy to Phillip Paul Fuchs: https://www.quickperm.org/ Quick Perm (Countdown)
 import java.util.Scanner;
 public class QuickPerm {
     int[] arr, counter; // 'arr' is the actual array, while counter is used to control the iteration
