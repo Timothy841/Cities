@@ -28,9 +28,8 @@ public class QuickPerm {
         }
     }
 
-    // TODO: create end condition
     public boolean hasNext() {
-        return false;
+        return (i < size);
     }
 
     // TODO: implement the actual algorithm
