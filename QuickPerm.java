@@ -1,7 +1,8 @@
 // Courteous of Phillip Paul Fuchs: https://www.quickperm.org/ Quick Perm (Countdown)
+import java.util.Scanner;
 public class QuickPerm {
     int[] arr, counter; // 'arr' is the actual array, while counter is used to control the iteration
-    int i = 1;
+    int i;
     int size;
     boolean generatedOnce = false;
 
@@ -11,6 +12,22 @@ public class QuickPerm {
             qp.generateNext();
             System.out.println(qp);
         }
+        Scanner a = new Scanner("3 4 5");
+        System.out.println(a.nextInt());
+    }
+
+    public static int numCities(Scanner a){
+      int tot = 0;
+      while (a.hasNextLine()){
+        a.nextLine();
+        tot++;
+      }
+      int num = 0;
+      while (!(tot<=0)){
+        num++;
+        tot-=num;
+      }
+      return num+1;
     }
 
     public QuickPerm(int size) {
@@ -34,10 +51,6 @@ public class QuickPerm {
     }
 
     public void generateNext() {
-        if (!generatedOnce) { // to work better with while (hasNext()) loop
-            generatedOnce = true;
-            return;
-        }
         if (!hasNext()) {
             // not sure if this is the best exception for this, but it's the best i could find
             throw new IndexOutOfBoundsException("QuickPerm can no longer generate, use 'hasNext()' to check when to stop");
