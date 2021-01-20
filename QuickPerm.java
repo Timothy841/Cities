@@ -32,9 +32,21 @@ public class QuickPerm {
         return (i < size);
     }
 
-    // TODO: implement the actual algorithm
     public void generateNext() {
+        if (!hasNext()) {
+            // not sure if this is the best exception for this, but it's the best i could find
+            throw new IndexOutOfBoundsException("QuickPerm can no longer generate, use 'hasNext()' to check when to stop");
+        }
 
+        counter[i] -= 1;
+        int j = (i % 2) * counter[i]; // if i is odd, then j = counter[i] otherwise j = 0
+        swap(i, j);
+
+        i = 1;
+        while (counter[i] == 0) {
+            counter[i] = i;
+            i++;
+        }
     }
 
     private void swap(int i, int j) {
