@@ -51,8 +51,8 @@ public class QuickPerm {
 
     private void swap(int i, int j) {
         int temp = arr[i];
-        arr[j] = arr[i];
-        arr[i] = temp;
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 
     public int get(int index) {
