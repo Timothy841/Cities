@@ -5,6 +5,7 @@ import java.io.File;
 
 public class Tester {
     public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
         try {
             int[][] data = Path.parseInput("cities.txt");
             Scanner datascan = new Scanner(new File("cities.txt"));
@@ -13,5 +14,7 @@ public class Tester {
         } catch(FileNotFoundException e) {
             e.printStackTrace();
         }
+        long endTime = System.currentTimeMillis();
+        System.out.println("Run Time: " + (endTime - startTime)/1000.0  + " seconds");
     }
 }
