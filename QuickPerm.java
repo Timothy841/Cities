@@ -32,4 +32,13 @@ public class QuickPerm {
     public int size() {
         return size;
     }
+
+    // purely for testing purposes
+    public String toString() {
+        String out = "";
+        for (int i = 0; i < arr.length; i++) {
+            out += arr[i]+" ";
+        }
+        return out;
+    }
 }
