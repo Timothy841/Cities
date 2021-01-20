@@ -21,11 +21,12 @@ public class QuickPerm {
         this.size = size;
 
         arr = new int[size];
-        counter = new int[size];
+        counter = new int[size + 1];
         for (int i = 0; i < size; i++) {
             arr[i] = i;
             counter[i] = i;
         }
+        counter[size] = size;
     }
 
     public boolean hasNext() {
@@ -38,7 +39,7 @@ public class QuickPerm {
             throw new IndexOutOfBoundsException("QuickPerm can no longer generate, use 'hasNext()' to check when to stop");
         }
 
-        counter[i] -= 1;
+        counter[i]--;
         int j = (i % 2) * counter[i]; // if i is odd, then j = counter[i] otherwise j = 0
         swap(i, j);
 
