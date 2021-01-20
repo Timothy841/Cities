@@ -3,10 +3,10 @@ public class QuickPerm {
     int[] arr, counter; // 'arr' is the actual array, while counter is used to control the iteration
     int i = 1;
     int size;
+    boolean generatedOnce = false;
 
     public static void main(String[] rememberTheAlamo) {
         QuickPerm qp = new QuickPerm(3);
-        System.out.println(qp);
         while (qp.hasNext()) {
             qp.generateNext();
             System.out.println(qp);
@@ -34,6 +34,10 @@ public class QuickPerm {
     }
 
     public void generateNext() {
+        if (!generatedOnce) { // to work better with while (hasNext()) loop
+            generatedOnce = true;
+            return;
+        }
         if (!hasNext()) {
             // not sure if this is the best exception for this, but it's the best i could find
             throw new IndexOutOfBoundsException("QuickPerm can no longer generate, use 'hasNext()' to check when to stop");
