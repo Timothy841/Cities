@@ -48,4 +48,30 @@ public class Path{
     }
     return data;
   }
+
+  public static int getLowest(QuickPerm permutation, int[][]data){
+    int lowest = 0;
+    int distance = 0;
+    while (permutation.hasNext()) {
+      distance = 0;
+      permutation.generateNext();
+      int current = permutation.get(0);
+      for (int i = 0; i < permutation.size(); i++){
+        int next = permutation.get(i);
+        if (current < next){
+          distance+= data[current][next];
+        }else{
+          distance+= data[next][current];
+        }
+        current = next;
+      }
+      if (lowest == 0){
+        lowest = distance;
+      }
+      if (distance < lowest){
+        lowest = distance;
+      }
+    }
+    return lowest;
+  }
 }
