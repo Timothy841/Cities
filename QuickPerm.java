@@ -4,7 +4,7 @@ public class QuickPerm {
     int i = 1;
     int size;
 
-    private static void main(String[] rememberTheAlamo) {
+    public static void main(String[] rememberTheAlamo) {
         QuickPerm qp = new QuickPerm(3);
         System.out.println(qp);
         while (qp.hasNext()) {
