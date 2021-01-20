@@ -1,4 +1,5 @@
 // Courteous of Phillip Paul Fuchs: https://www.quickperm.org/ Quick Perm (Countdown)
+import java.util.Scanner;
 public class QuickPerm {
     int[] arr, counter; // 'arr' is the actual array, while counter is used to control the iteration
     int i;
@@ -11,6 +12,22 @@ public class QuickPerm {
             qp.generateNext();
             System.out.println(qp);
         }
+        Scanner a = new Scanner("3 4 5");
+        System.out.println(a.nextInt());
+    }
+
+    public static int numCities(Scanner a){
+      int tot = 0;
+      while (a.hasNextLine()){
+        a.nextLine();
+        tot++;
+      }
+      int num = 0;
+      while (!(tot<=0)){
+        num++;
+        tot-=num;
+      }
+      return num+1;
     }
 
     public QuickPerm(int size) {
