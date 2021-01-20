@@ -11,8 +11,6 @@ public class QuickPerm {
             qp.generateNext();
             System.out.println(qp);
         }
-        Scanner a = new Scanner("3 4 5");
-        System.out.println(a.nextInt());
     }
 
     public static int numCities(Scanner a){
