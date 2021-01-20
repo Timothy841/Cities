@@ -4,7 +4,6 @@ public class QuickPerm {
     int[] arr, counter; // 'arr' is the actual array, while counter is used to control the iteration
     int i;
     int size;
-    boolean generatedOnce = false;
 
     public static void main(String[] rememberTheAlamo) {
         QuickPerm qp = new QuickPerm(3);
