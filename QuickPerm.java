@@ -9,14 +9,6 @@ public class QuickPerm {
 
     }
 
-    public int get(int index) {
-        return arr[index];
-    }
-
-    public int size() {
-        return size;
-    }
-
     // TODO: create end condition
     public boolean hasNext() {
         return false;
@@ -31,5 +23,13 @@ public class QuickPerm {
         int temp = arr[i];
         arr[j] = arr[i];
         arr[i] = temp;
+    }
+
+    public int get(int index) {
+        return arr[index];
+    }
+
+    public int size() {
+        return size;
     }
 }
