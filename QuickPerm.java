@@ -1,7 +1,7 @@
 // Courteous of Phillip Paul Fuchs: https://www.quickperm.org/ Quick Perm (Countdown)
 public class QuickPerm {
     int[] arr, counter; // 'arr' is the actual array, while counter is used to control the iteration
-    int i;
+    int i = 1;
     int size;
 
     private static void main(String[] rememberTheAlamo) {
@@ -13,9 +13,19 @@ public class QuickPerm {
         }
     }
 
-    // TODO: initialize arr, counter, i, and size
-    public QuickPerm(int length) {
+    public QuickPerm(int size) {
+        if (size <= 2) {
+            throw new IllegalArgumentException("A size of " + size + " is invalid: QuickPerm's size must be >2");
+        }
 
+        this.size = size;
+
+        arr = new int[size];
+        counter = new int[size];
+        for (int i = 0; i < size; i++) {
+            arr[i] = i;
+            counter[i] = i;
+        }
     }
 
     // TODO: create end condition
