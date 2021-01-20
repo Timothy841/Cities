@@ -4,6 +4,15 @@ public class QuickPerm {
     int i;
     int size;
 
+    private static void main(String[] rememberTheAlamo) {
+        QuickPerm qp = new QuickPerm(3);
+        System.out.println(qp);
+        while (qp.hasNext()) {
+            qp.generateNext();
+            System.out.println(qp);
+        }
+    }
+
     // TODO: initialize arr, counter, i, and size
     public QuickPerm(int length) {
 
