@@ -2,9 +2,6 @@ import java.util.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 public class Path{
-  private static String[][] path(Scanner a){
-    return null;
-  }
 
   public static int[][] parseInput(String path) throws FileNotFoundException{
     File f = new File(path);
