@@ -1,7 +1,21 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
+
 public class Path{
+  // returns -1 if failure
+  public static int minimumDistance(String path) {
+    try {
+      int[][] data = parseInput(path);
+      Scanner datascan = new Scanner(new File(path));
+      QuickPerm qp = new QuickPerm(QuickPerm.numCities(datascan));
+      return getLowest(qp, data);
+    } catch(FileNotFoundException e) {
+        e.printStackTrace();
+    }
+    return -1;
+  }
 
   public static int[][] parseInput(String path) throws FileNotFoundException{
     File f = new File(path);
@@ -41,8 +55,9 @@ public class Path{
       }
 
       data[indexA][indexB] = distance;
-
+      s2.close();
     }
+    s.close();
     return data;
   }
 
